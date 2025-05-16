@@ -2,6 +2,7 @@ services:
   - type: web
     name: st-joseph-church-api
     env: node
+    rootDir: server
     buildCommand: npm install
     startCommand: npm start
     envVars:
