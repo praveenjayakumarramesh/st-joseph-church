@@ -1,0 +1,97 @@
+.yearly-expenditures {
+  padding: 2rem 0;
+}
+
+.summary-card, .monthly-summary {
+  height: 100%;
+  border: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.summary-card:hover, .monthly-summary:hover {
+  transform: translateY(-5px);
+}
+
+.summary-card .card-title, .monthly-summary .card-title {
+  color: #2c3e50;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #3498db;
+  padding-bottom: 0.5rem;
+}
+
+.amount {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.amount.income {
+  color: #27ae60;
+}
+
+.amount.expenditure {
+  color: #e74c3c;
+}
+
+.amount.positive {
+  color: #27ae60;
+}
+
+.amount.negative {
+  color: #e74c3c;
+}
+
+.monthly-section {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.month-title {
+  color: #2c3e50;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #3498db;
+}
+
+.table {
+  margin-top: 1rem;
+}
+
+.table thead th {
+  background-color: #f8f9fa;
+  border-bottom: 2px solid #dee2e6;
+  color: #2c3e50;
+}
+
+.table td.income {
+  color: #27ae60;
+}
+
+.table td.expenditure {
+  color: #e74c3c;
+}
+
+@media (max-width: 768px) {
+  .yearly-expenditures {
+    padding: 1rem;
+  }
+  
+  .summary-card, .monthly-summary {
+    margin-bottom: 1rem;
+  }
+  
+  .amount {
+    font-size: 1.2rem;
+  }
+  
+  .monthly-section {
+    padding: 1rem;
+  }
+  
+  .table {
+    font-size: 0.9rem;
+  }
+} 

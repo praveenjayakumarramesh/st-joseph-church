@@ -1,0 +1,69 @@
+.donations-container {
+  padding: 2rem 0;
+}
+
+.summary-card {
+  text-align: center;
+  margin-bottom: 1rem;
+  border: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.summary-card:hover {
+  transform: translateY(-5px);
+}
+
+.summary-card .card-title {
+  color: #2c3e50;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.summary-card .amount {
+  color: #3498db;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.table {
+  margin-top: 2rem;
+  background: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.table thead th {
+  background-color: #f8f9fa;
+  border-bottom: 2px solid #dee2e6;
+  color: #2c3e50;
+}
+
+.table td {
+  vertical-align: middle;
+}
+
+.form-select {
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  padding: 0.5rem;
+}
+
+.form-select:focus {
+  border-color: #3498db;
+  box-shadow: 0 0 0 0.2rem rgba(52, 152, 219, 0.25);
+}
+
+@media (max-width: 768px) {
+  .donations-container {
+    padding: 1rem;
+  }
+  
+  .summary-card {
+    margin-bottom: 1rem;
+  }
+  
+  .table {
+    font-size: 0.9rem;
+  }
+} 
