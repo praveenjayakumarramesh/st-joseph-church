@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const recordSchema = new mongoose.Schema({
-  donorName: {
+  name: {
     type: String,
     required: true,
     trim: true
@@ -13,7 +13,6 @@ const recordSchema = new mongoose.Schema({
   },
   function: {
     type: String,
-    required: true,
     trim: true
   },
   type: {

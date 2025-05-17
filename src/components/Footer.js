@@ -31,7 +31,8 @@ const Footer = () => {
           <Col md={4}>
             <h5>Quick Links</h5>
             <ul className="list-unstyled">
-              <li><a href="/donations">Donations</a></li>
+              <li><a href="/income">Income</a></li>
+              <li><a href="/expenses">Expenses</a></li>
               <li><a href="/gallery">Photo Gallery</a></li>
               <li><a href="/designations">Church Designations</a></li>
             </ul>

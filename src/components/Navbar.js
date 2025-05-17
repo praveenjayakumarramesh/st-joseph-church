@@ -42,16 +42,13 @@ const NavigationBar = () => {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto">
             <Nav.Link as={Link} to="/">Home</Nav.Link>
-            <Nav.Link as={Link} to="/donations">Donations</Nav.Link>
+            <Nav.Link as={Link} to="/income">Income</Nav.Link>
+            <Nav.Link as={Link} to="/expenses">Expenses</Nav.Link>
             <Nav.Link as={Link} to="/expenditures">Yearly Report</Nav.Link>
             <Nav.Link as={Link} to="/gallery">Gallery</Nav.Link>
             <Nav.Link as={Link} to="/designations">Designations</Nav.Link>
             {isLoggedIn && (
-              <>
-                <Nav.Link as={Link} to="/admin/dashboard">Dashboard</Nav.Link>
-                <Nav.Link as={Link} to="/admin/gallery">Manage Gallery</Nav.Link>
-                <Nav.Link onClick={handleLogout}>Logout</Nav.Link>
-              </>
+              <Nav.Link onClick={handleLogout}>Logout</Nav.Link>
             )}
           </Nav>
         </Navbar.Collapse>

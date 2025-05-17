@@ -6,9 +6,10 @@ const path = require('path');
 
 // Import routes
 const authRoutes = require('./routes/auth');
-const donationRoutes = require('./routes/donations');
 const galleryRoutes = require('./routes/gallery');
 const designationRoutes = require('./routes/designations');
+const expenseRoutes = require('./routes/expenses');
+const recordsRouter = require('./routes/records');
 
 const app = express();
 
@@ -36,9 +37,10 @@ app.use((req, res, next) => {
 
 // API routes
 app.use('/api/auth', authRoutes);
-app.use('/api/donations', donationRoutes);
 app.use('/api/gallery', galleryRoutes);
 app.use('/api/designations', designationRoutes);
+app.use('/api/expenses', expenseRoutes);
+app.use('/api/records', recordsRouter);
 
 // Serve static files from the React app
 app.use(express.static(path.join(__dirname, '../../build')));
@@ -51,19 +53,32 @@ app.get('*', (req, res) => {
 // Error handling middleware
 app.use((err, req, res, next) => {
   console.error('Error:', err);
-  res.status(500).json({ message: 'Internal server error' });
+  res.status(500).json({ 
+    message: 'Internal server error',
+    error: process.env.NODE_ENV === 'development' ? err.message : undefined
+  });
 });
 
 // MongoDB connection
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/st-joseph-church', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-})
-.then(() => console.log('Connected to MongoDB'))
-.catch(err => console.error('MongoDB connection error:', err));
+const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/st-joseph-church';
 
-// Start server
-const PORT = process.env.PORT || 5001;
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
+mongoose.connect(MONGODB_URI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+  serverSelectionTimeoutMS: 5000 // Timeout after 5s instead of 30s
+})
+.then(() => {
+  console.log('Connected to MongoDB');
+  // Start server only after successful database connection
+  const PORT = process.env.PORT || 5001;
+  app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
+  });
+})
+.catch(err => {
+  console.error('MongoDB connection error:', {
+    message: err.message,
+    stack: err.stack
+  });
+  process.exit(1); // Exit if cannot connect to database
 }); 

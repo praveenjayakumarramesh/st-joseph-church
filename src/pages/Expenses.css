@@ -1,4 +1,4 @@
-.donations-container {
+.expenses-container {
   padding: 2rem 0;
 }
 
@@ -55,7 +55,7 @@
 }
 
 @media (max-width: 768px) {
-  .donations-container {
+  .expenses-container {
     padding: 1rem;
   }
   

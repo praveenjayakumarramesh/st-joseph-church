@@ -29,7 +29,7 @@ const Login = () => {
         localStorage.setItem('token', response.data.token);
         // Dispatch a custom event to notify other components about the login
         window.dispatchEvent(new Event('loginStateChanged'));
-        navigate('/admin/dashboard');
+        navigate('/income');
       } else {
         setError('Invalid response from server');
       }

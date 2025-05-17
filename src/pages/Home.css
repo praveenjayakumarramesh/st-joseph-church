@@ -2,15 +2,33 @@
   padding: 2rem 0;
 }
 
+.carousel {
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
+}
+
 .carousel-image {
-  height: 400px;
+  height: 600px;
   object-fit: cover;
+  width: 100%;
 }
 
 .carousel-caption {
-  background: rgba(0, 0, 0, 0.5);
-  padding: 1rem;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 1.5rem;
   border-radius: 4px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.carousel-caption h3 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.carousel-caption p {
+  font-size: 1.2rem;
 }
 
 .info-card, .announcements-card, .events-card {
@@ -73,7 +91,19 @@
   }
   
   .carousel-image {
-    height: 300px;
+    height: 400px;
+  }
+  
+  .carousel-caption {
+    padding: 1rem;
+  }
+  
+  .carousel-caption h3 {
+    font-size: 1.8rem;
+  }
+  
+  .carousel-caption p {
+    font-size: 1rem;
   }
   
   .info-card, .announcements-card, .events-card {
