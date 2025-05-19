@@ -10,6 +10,8 @@ services:
         value: production
       - key: PORT
         value: 10000
+      - key: REACT_APP_API_URL
+        value: https://st-joseph-church-api.onrender.com
       - key: MONGODB_URI
         sync: false
       - key: JWT_SECRET
